@@ -21,9 +21,11 @@
         setThemeClass();
     </script>
     <script>
-      const getToken = () => {
-        axios.get(`https://e381-89-169-5-232.ngrok-free.app/get_token?initData=${Telegram.WebApp.initData}`)
-    .then((response) => {
+    axios.get('https://e381-89-169-5-232.ngrok-free.app/get_token', {
+     headers: {
+      Authorization: Telegram.WebApp.initData     
+     }
+    }).then(response => {
       const token = response.data.token;
       console.log(`GET token`, token);
     })
