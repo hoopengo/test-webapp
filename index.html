@@ -23,7 +23,8 @@
     <script>
     axios.get('https://e381-89-169-5-232.ngrok-free.app/get_token', {
      headers: {
-      Authorization: Telegram.WebApp.initData     
+      "Authorization": Telegram.WebApp.initData,
+      "Access-Control-Allow-Origin": "*"
      }
     }).then(response => {
       const token = response.data.token;
